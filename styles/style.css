@@ -1,0 +1,1519 @@
+/* ==========================================================
+   EXPLAINABLE AI DIABETES PREDICTION SYSTEM
+   PREMIUM UI - PART 1
+   Theme : Green + Black + Glassmorphism
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================================
+   ROOT COLORS
+========================================================== */
+
+:root{
+
+--bg:#05080d;
+--bg2:#081218;
+--card:rgba(20,28,35,.70);
+--card2:rgba(18,22,28,.88);
+
+--green:#00ff88;
+--green2:#00d46d;
+--green3:#00b45d;
+
+--white:#ffffff;
+--text:#d9e2ec;
+--muted:#9fb3c8;
+
+--border:rgba(0,255,136,.22);
+
+}
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+html,
+body,
+[class*="css"]{
+
+font-family:'Poppins',sans-serif;
+
+scroll-behavior:smooth;
+
+}
+
+/* ==========================================================
+   BACKGROUND
+========================================================== */
+
+.stApp{
+
+background:
+radial-gradient(circle at top left,
+rgba(0,255,136,.18),
+transparent 35%),
+
+radial-gradient(circle at bottom right,
+rgba(0,180,90,.12),
+transparent 35%),
+
+linear-gradient(
+135deg,
+#040404,
+#071018,
+#020303);
+
+background-attachment:fixed;
+
+color:var(--text);
+
+}
+
+/* ==========================================================
+   REMOVE STREAMLIT HEADER
+========================================================== */
+
+header{
+
+background:transparent;
+
+}
+
+footer{
+
+visibility:hidden;
+
+}
+
+#MainMenu{
+
+visibility:hidden;
+
+}
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+[data-testid="stSidebar"]{
+
+background:
+
+linear-gradient(
+180deg,
+#081018,
+#040607);
+
+border-right:1px solid var(--border);
+
+box-shadow:
+
+5px 0 25px rgba(0,255,136,.08);
+
+}
+
+/* Sidebar title */
+
+.sidebar-title{
+
+font-size:28px;
+
+font-weight:700;
+
+color:var(--green);
+
+text-align:center;
+
+margin-top:10px;
+
+margin-bottom:25px;
+
+letter-spacing:1px;
+
+}
+
+/* Sidebar radio */
+
+[data-testid="stSidebar"] label{
+
+color:white !important;
+
+font-weight:600;
+
+}
+
+/* ==========================================================
+   HERO SECTION
+========================================================== */
+
+.hero{
+
+background:
+
+linear-gradient(
+135deg,
+rgba(0,255,136,.18),
+rgba(0,0,0,.35));
+
+border:1px solid rgba(0,255,136,.28);
+
+border-radius:30px;
+
+padding:45px;
+
+backdrop-filter:blur(20px);
+
+box-shadow:
+
+0 25px 60px rgba(0,255,136,.12);
+
+margin-bottom:35px;
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+/* glowing circle */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+top:-100px;
+
+right:-100px;
+
+width:250px;
+
+height:250px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(0,255,136,.28),
+
+transparent 70%
+
+);
+
+}
+
+/* ==========================================================
+   TITLES
+========================================================== */
+
+.main-title{
+
+font-size:48px;
+
+font-weight:800;
+
+color:#00ff88;
+
+text-align:center;
+
+margin-bottom:12px;
+
+text-shadow:
+
+0 0 20px rgba(0,255,136,.45);
+
+}
+
+.subtitle{
+
+font-size:20px;
+
+text-align:center;
+
+color:#d2d9df;
+
+font-weight:400;
+
+}
+
+/* ==========================================================
+   GLASS CARD
+========================================================== */
+
+.glass-card{
+
+background:
+
+rgba(255,255,255,.05);
+
+border:
+
+1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+padding:28px;
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+
+0 15px 45px rgba(0,255,136,.10);
+
+transition:.35s;
+
+margin-bottom:25px;
+
+}
+
+.glass-card:hover{
+
+transform:
+
+translateY(-6px);
+
+box-shadow:
+
+0 20px 60px rgba(0,255,136,.25);
+
+border:
+
+1px solid rgba(0,255,136,.45);
+
+}
+
+/* ==========================================================
+   SUCCESS CARD
+========================================================== */
+
+.success-card{
+
+background:
+
+linear-gradient(
+135deg,
+#00d46d,
+#00ff88);
+
+padding:22px;
+
+border-radius:18px;
+
+text-align:center;
+
+font-size:28px;
+
+font-weight:700;
+
+color:white;
+
+box-shadow:
+
+0 10px 35px rgba(0,255,136,.35);
+
+}
+
+/* ==========================================================
+   INFO CARD
+========================================================== */
+
+.info-card{
+
+background:
+
+rgba(255,255,255,.04);
+
+padding:22px;
+
+border-radius:18px;
+
+border-left:6px solid var(--green);
+
+margin-bottom:20px;
+
+}
+
+/* ==========================================================
+   METRIC CARDS
+========================================================== */
+
+[data-testid="stMetric"]{
+
+background:
+
+rgba(255,255,255,.04);
+
+border-radius:20px;
+
+padding:20px;
+
+border:
+
+1px solid rgba(0,255,136,.18);
+
+box-shadow:
+
+0 10px 25px rgba(0,255,136,.08);
+
+transition:.35s;
+
+}
+
+[data-testid="stMetric"]:hover{
+
+transform:
+
+translateY(-4px);
+
+border:
+
+1px solid rgba(0,255,136,.45);
+
+box-shadow:
+
+0 20px 40px rgba(0,255,136,.18);
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.stButton>button{
+
+width:100%;
+
+height:60px;
+
+border:none;
+
+border-radius:18px;
+
+font-size:18px;
+
+font-weight:700;
+
+color:white;
+
+background:
+
+linear-gradient(
+90deg,
+#00ff88,
+#00b45d);
+
+transition:.35s;
+
+box-shadow:
+
+0 8px 25px rgba(0,255,136,.22);
+
+}
+
+.stButton>button:hover{
+
+transform:
+
+translateY(-3px);
+
+box-shadow:
+
+0 0 35px rgba(0,255,136,.45);
+
+background:
+
+linear-gradient(
+90deg,
+#00b45d,
+#00ff88);
+
+cursor:pointer;
+
+}
+
+/* ==========================================================
+   HORIZONTAL RULE
+========================================================== */
+
+hr{
+
+border:
+
+1px solid rgba(0,255,136,.12);
+
+margin-top:15px;
+
+margin-bottom:15px;
+
+}
+/* ==========================================================
+   PREMIUM UI - PART 2
+   Inputs • Forms • Tables • Charts • Reports
+========================================================== */
+
+
+/* ==========================================================
+   NUMBER INPUT
+========================================================== */
+
+.stNumberInput{
+
+margin-bottom:18px;
+
+}
+
+.stNumberInput label{
+
+font-size:15px;
+
+font-weight:600;
+
+color:#ffffff !important;
+
+letter-spacing:.4px;
+
+}
+
+.stNumberInput input{
+
+background:rgba(255,255,255,.06) !important;
+
+color:#ffffff !important;
+
+border:1px solid rgba(0,255,136,.25) !important;
+
+border-radius:14px !important;
+
+padding:12px !important;
+
+transition:.35s;
+
+}
+
+.stNumberInput input:hover{
+
+border:1px solid #00ff88 !important;
+
+box-shadow:0 0 18px rgba(0,255,136,.18);
+
+}
+
+.stNumberInput input:focus{
+
+border:1px solid #00ff88 !important;
+
+box-shadow:0 0 25px rgba(0,255,136,.28);
+
+}
+
+
+/* ==========================================================
+   SELECT BOX
+========================================================== */
+
+.stSelectbox{
+
+margin-bottom:18px;
+
+}
+
+.stSelectbox label{
+
+font-weight:600;
+
+color:white !important;
+
+}
+
+.stSelectbox div[data-baseweb="select"]{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(0,255,136,.25);
+
+border-radius:14px;
+
+transition:.3s;
+
+}
+
+.stSelectbox div[data-baseweb="select"]:hover{
+
+border:1px solid #00ff88;
+
+box-shadow:0 0 15px rgba(0,255,136,.18);
+
+}
+
+
+/* ==========================================================
+   TEXT INPUT
+========================================================== */
+
+.stTextInput input{
+
+background:rgba(255,255,255,.05);
+
+border-radius:14px;
+
+border:1px solid rgba(0,255,136,.22);
+
+color:white;
+
+}
+
+.stTextInput input:focus{
+
+border:1px solid #00ff88;
+
+}
+
+
+/* ==========================================================
+   TEXT AREA
+========================================================== */
+
+textarea{
+
+background:rgba(255,255,255,.05) !important;
+
+border-radius:15px !important;
+
+color:white !important;
+
+border:1px solid rgba(0,255,136,.20) !important;
+
+}
+
+
+/* ==========================================================
+   DATAFRAME
+========================================================== */
+
+[data-testid="stDataFrame"]{
+
+border-radius:18px;
+
+overflow:hidden;
+
+border:1px solid rgba(0,255,136,.22);
+
+box-shadow:0 15px 40px rgba(0,255,136,.10);
+
+}
+
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+table{
+
+border-collapse:collapse;
+
+width:100%;
+
+}
+
+thead{
+
+background:#00ff88;
+
+color:black;
+
+font-weight:700;
+
+}
+
+tbody tr{
+
+background:rgba(255,255,255,.04);
+
+transition:.3s;
+
+}
+
+tbody tr:hover{
+
+background:rgba(0,255,136,.10);
+
+}
+
+
+/* ==========================================================
+   PROGRESS BAR
+========================================================== */
+
+.stProgress{
+
+margin-top:10px;
+
+margin-bottom:20px;
+
+}
+
+.stProgress > div > div{
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#00b45d,
+
+#00ff88
+
+);
+
+border-radius:20px;
+
+}
+
+
+/* ==========================================================
+   PLOTLY CHART
+========================================================== */
+
+.js-plotly-plot{
+
+border-radius:20px;
+
+padding:15px;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(0,255,136,.18);
+
+box-shadow:0 15px 35px rgba(0,255,136,.10);
+
+}
+
+
+/* ==========================================================
+   MATPLOTLIB FIGURES
+========================================================== */
+
+canvas{
+
+border-radius:20px;
+
+}
+
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+img{
+
+border-radius:20px;
+
+box-shadow:
+
+0 15px 40px rgba(0,255,136,.15);
+
+transition:.35s;
+
+}
+
+img:hover{
+
+transform:scale(1.01);
+
+}
+
+
+/* ==========================================================
+   ALERTS
+========================================================== */
+
+.stSuccess{
+
+border-radius:16px;
+
+}
+
+.stWarning{
+
+border-radius:16px;
+
+}
+
+.stInfo{
+
+border-radius:16px;
+
+}
+
+.stError{
+
+border-radius:16px;
+
+}
+
+
+/* ==========================================================
+   EXPANDER
+========================================================== */
+
+.streamlit-expanderHeader{
+
+font-size:18px;
+
+font-weight:600;
+
+color:#00ff88;
+
+}
+
+.streamlit-expanderContent{
+
+background:rgba(255,255,255,.03);
+
+border-radius:15px;
+
+}
+
+
+/* ==========================================================
+   TABS
+========================================================== */
+
+.stTabs [role="tab"]{
+
+background:rgba(255,255,255,.05);
+
+border-radius:12px;
+
+padding:10px 18px;
+
+margin-right:8px;
+
+transition:.3s;
+
+}
+
+.stTabs [aria-selected="true"]{
+
+background:#00ff88;
+
+color:black;
+
+font-weight:700;
+
+}
+
+
+/* ==========================================================
+   DOWNLOAD BUTTON
+========================================================== */
+
+.stDownloadButton>button{
+
+width:100%;
+
+height:58px;
+
+border:none;
+
+border-radius:16px;
+
+font-weight:700;
+
+font-size:17px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#00b45d,
+
+#00ff88
+
+);
+
+color:white;
+
+transition:.35s;
+
+}
+
+.stDownloadButton>button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 0 30px rgba(0,255,136,.45);
+
+}
+
+
+/* ==========================================================
+   REPORT CARD
+========================================================== */
+
+.report-card{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(0,255,136,.10),
+
+rgba(255,255,255,.04)
+
+);
+
+border:1px solid rgba(0,255,136,.22);
+
+border-radius:20px;
+
+padding:25px;
+
+margin-bottom:20px;
+
+}
+
+
+/* ==========================================================
+   SHAP SECTION
+========================================================== */
+
+.shap-card{
+
+background:rgba(255,255,255,.04);
+
+border-radius:20px;
+
+padding:20px;
+
+border:1px solid rgba(0,255,136,.20);
+
+box-shadow:
+
+0 12px 30px rgba(0,255,136,.10);
+
+}
+
+
+/* ==========================================================
+   PREDICTION PANEL
+========================================================== */
+
+.prediction-panel{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(0,255,136,.12),
+
+rgba(255,255,255,.04)
+
+);
+
+padding:25px;
+
+border-radius:20px;
+
+border:1px solid rgba(0,255,136,.22);
+
+margin-top:20px;
+
+margin-bottom:25px;
+
+box-shadow:
+
+0 15px 40px rgba(0,255,136,.12);
+
+}
+
+
+/* ==========================================================
+   DASHBOARD IMAGE
+========================================================== */
+
+.dashboard{
+
+border-radius:22px;
+
+overflow:hidden;
+
+box-shadow:
+
+0 20px 45px rgba(0,255,136,.15);
+
+margin-top:20px;
+
+margin-bottom:20px;
+
+}
+
+
+/* ==========================================================
+   DIVIDER
+========================================================== */
+
+hr{
+
+border:1px solid rgba(0,255,136,.15);
+
+margin-top:18px;
+
+margin-bottom:18px;
+
+}
+/* ==========================================================
+   PREMIUM UI - PART 3
+   Animations • Glow • Responsive • Final Polish
+========================================================== */
+
+
+/* ==========================================================
+   FADE ANIMATION
+========================================================== */
+
+@keyframes fadeIn{
+
+0%{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+100%{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.hero,
+.glass-card,
+.report-card,
+.prediction-panel,
+.success-card,
+.info-card{
+
+animation:fadeIn .8s ease;
+
+}
+
+
+/* ==========================================================
+   FLOAT ANIMATION
+========================================================== */
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+.glass-card{
+
+animation:floating 6s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================
+   PULSE GLOW
+========================================================== */
+
+@keyframes pulse{
+
+0%{
+
+box-shadow:0 0 15px rgba(0,255,136,.25);
+
+}
+
+50%{
+
+box-shadow:0 0 45px rgba(0,255,136,.50);
+
+}
+
+100%{
+
+box-shadow:0 0 15px rgba(0,255,136,.25);
+
+}
+
+}
+
+.success-card{
+
+animation:pulse 2s infinite;
+
+}
+
+
+/* ==========================================================
+   GLOW BORDER
+========================================================== */
+
+.glass-card:hover{
+
+border:1px solid #00ff88;
+
+box-shadow:
+
+0 0 15px rgba(0,255,136,.25),
+
+0 0 30px rgba(0,255,136,.20),
+
+0 0 50px rgba(0,255,136,.15);
+
+}
+
+
+/* ==========================================================
+   HERO GLOW
+========================================================== */
+
+.hero{
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+left:-30%;
+
+top:-30%;
+
+width:220px;
+
+height:220px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+
+rgba(0,255,136,.18),
+
+transparent 70%);
+
+animation:heroMove 8s linear infinite;
+
+}
+
+@keyframes heroMove{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(150px,80px);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}
+
+
+/* ==========================================================
+   BUTTON GLOW
+========================================================== */
+
+.stButton>button{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.stButton>button::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:80px;
+
+height:100%;
+
+background:
+
+rgba(255,255,255,.35);
+
+transform:skewX(-25deg);
+
+transition:.7s;
+
+}
+
+.stButton>button:hover::before{
+
+left:130%;
+
+}
+
+
+/* ==========================================================
+   METRIC GLOW
+========================================================== */
+
+[data-testid="stMetric"]{
+
+transition:.35s;
+
+}
+
+[data-testid="stMetric"]:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 0 20px rgba(0,255,136,.22),
+
+0 15px 35px rgba(0,255,136,.18);
+
+}
+
+
+/* ==========================================================
+   INPUT FOCUS
+========================================================== */
+
+input:focus{
+
+outline:none !important;
+
+box-shadow:
+
+0 0 20px rgba(0,255,136,.35);
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#050505;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#00ff88,
+
+#00a95d
+
+);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#00ff88;
+
+}
+
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+a{
+
+color:#00ff88;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+a:hover{
+
+color:white;
+
+}
+
+
+/* ==========================================================
+   HEADINGS
+========================================================== */
+
+h1{
+
+font-weight:800;
+
+}
+
+h2{
+
+font-weight:700;
+
+color:#00ff88;
+
+}
+
+h3{
+
+font-weight:600;
+
+color:white;
+
+}
+
+
+/* ==========================================================
+   TEXT
+========================================================== */
+
+p{
+
+line-height:1.7;
+
+color:#d9d9d9;
+
+}
+
+
+/* ==========================================================
+   IMAGE EFFECT
+========================================================== */
+
+img{
+
+transition:.4s;
+
+}
+
+img:hover{
+
+transform:scale(1.02);
+
+box-shadow:
+
+0 0 20px rgba(0,255,136,.20),
+
+0 25px 55px rgba(0,255,136,.20);
+
+}
+
+
+/* ==========================================================
+   SHADOW UTILITIES
+========================================================== */
+
+.shadow{
+
+box-shadow:
+
+0 15px 40px rgba(0,255,136,.15);
+
+}
+
+.glow{
+
+box-shadow:
+
+0 0 35px rgba(0,255,136,.35);
+
+}
+
+
+/* ==========================================================
+   DASHBOARD CARD
+========================================================== */
+
+.dashboard-card{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(255,255,255,.05),
+
+rgba(0,255,136,.06)
+
+);
+
+border-radius:22px;
+
+padding:25px;
+
+border:1px solid rgba(0,255,136,.18);
+
+transition:.35s;
+
+}
+
+.dashboard-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+
+0 20px 45px rgba(0,255,136,.20);
+
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.footer{
+
+margin-top:50px;
+
+padding:25px;
+
+text-align:center;
+
+color:#9aa5b1;
+
+font-size:14px;
+
+border-top:1px solid rgba(0,255,136,.15);
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+.main-title{
+
+font-size:32px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+}
+
+.hero{
+
+padding:25px;
+
+}
+
+.glass-card{
+
+padding:18px;
+
+}
+
+.stButton>button{
+
+height:52px;
+
+font-size:16px;
+
+}
+
+}
+
+
+/* ==========================================================
+   DESKTOP LARGE
+========================================================== */
+
+@media (min-width:1500px){
+
+.main-title{
+
+font-size:56px;
+
+}
+
+.hero{
+
+padding:60px;
+
+}
+
+}
+
+
+/* ==========================================================
+   END OF FILE
+========================================================== */
