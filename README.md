@@ -5,6 +5,8 @@
 
 An AI-based diabetes risk prediction system using Machine Learning and Explainable AI.
 
+🔗 Live Application: [https://aidiabetes-predictor.streamlit.app]
+
 
 ## Technologies Used
 
