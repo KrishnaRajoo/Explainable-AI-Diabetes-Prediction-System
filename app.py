@@ -7,6 +7,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 from reportlab.platypus import SimpleDocTemplate, Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
+import time
 
 # =========================
 # PAGE CONFIG
@@ -28,9 +29,18 @@ def load_css():
 
 load_css()
 
+
+
 # =========================
 # SESSION STATE
 # =========================
+
+# =========================
+# SPLASH SCREEN
+# =========================
+
+if "show_splash" not in st.session_state:
+    st.session_state.show_splash = True
 
 if "prediction_done" not in st.session_state:
     st.session_state.prediction_done = False
@@ -51,6 +61,67 @@ if "prediction" not in st.session_state:
 model = pickle.load(
     open("diabetes_xgb_model.pkl","rb")
 )
+
+# =========================
+# SPLASH SCREEN
+# =========================
+
+if st.session_state.show_splash:
+
+    st.markdown(
+        """
+        <style>
+        .title{
+            text-align:center;
+            color:#00ff88;
+            font-size:48px;
+            font-weight:800;
+        }
+
+        .subtitle{
+            text-align:center;
+            color:white;
+            font-size:20px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.markdown("<div class='title'>🩺</div>", unsafe_allow_html=True)
+    st.markdown("<div class='title'>Explainable AI Diabetes Prediction System</div>", unsafe_allow_html=True)
+    st.markdown("<div class='subtitle'>AI Powered Healthcare Intelligence</div>", unsafe_allow_html=True)
+
+    progress = st.progress(0)
+
+    status = st.empty()
+
+    messages = [
+        "Loading Machine Learning Model...",
+        "Initializing XGBoost...",
+        "Preparing Explainable AI...",
+        "Loading Dashboard...",
+        "Launching Application..."
+    ]
+
+    for i in range(100):
+        progress.progress(i + 1)
+
+        if i < 20:
+            status.info(messages[0])
+        elif i < 40:
+            status.info(messages[1])
+        elif i < 60:
+            status.info(messages[2])
+        elif i < 80:
+            status.info(messages[3])
+        else:
+            status.success(messages[4])
+
+        time.sleep(0.03)
+
+    st.session_state.show_splash = False
+    st.rerun()
 
 # =========================
 # SIDEBAR
